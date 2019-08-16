@@ -1,0 +1,21 @@
+<div class="container-body">
+<div class="content-item" *ngIf="currencyCurrent != null">
+  <div><span>{{currencyCurrent.id}}</span></div>
+    <p class="link-back" (click)="back()"><span class="_fleche"></span><span class="_text">Back</span></p>
+   <div>
+     <span>Code: </span><span>{{currencyCurrent.attributes.code}}</span>
+  </div>
+  <div>
+      <span>Name: </span><span>{{currencyCurrent.attributes.name}}</span>
+   </div>
+   <div>
+      <span>Currency_type: </span><span>{{currencyCurrent.attributes.currency_type}}</span>
+   </div>
+   <div>
+      <span>Code_iso_numeric3: </span><span>{{currencyCurrent.attributes.code_iso_numeric3}}</span>
+   </div>
+   <div>
+      <span>code_iso_alpha3: </span><span>{{currencyCurrent.attributes.code_iso_alpha3}}</span>
+   </div>
+  </div>    
+</div>

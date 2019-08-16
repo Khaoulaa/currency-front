@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+.section-dropdown{
+    .btn-group{
+        button{
+            font-size: 12px;
+        }
+    }
+    .dropdown-menu {
+        font-size: 12px;
+    }
+}
+body .ui-paginator .ui-dropdown .ui-dropdown-label{
+    font-size: 13px;
+}
+body .ui-dropdown .ui-dropdown-trigger{
+    width: 1em!important;
+}
+.ui-dropdown .ui-dropdown-trigger .ui-dropdown-trigger-icon{
+    font-size: 12px!important;
+}

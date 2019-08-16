@@ -1,0 +1,39 @@
+<div class="row container-body">
+    <h1> Currencies availables</h1>
+    <div class ="nav-items ui-g">
+        <div class="" class="section-search">
+            <input placeholder="search" [(ngModel)]="fieldSearch"><i *ngIf="fieldSearch.length === 0" class="fa fa-search" aria-hidden="true"></i>
+        </div>
+        <div class="" class="section-dropdown">
+                <div class="btn-group" dropdown>
+                        <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+                                aria-controls="dropdown-basic">
+                          By field <span class="caret"></span>
+                        </button>
+                        <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                            role="menu" aria-labelledby="button-basic">
+                          <li role="menuitem" *ngFor="let item of items;let i=index" (click) = "filterbyField(i)">
+                              <a class="dropdown-item" >{{item}}</a>
+            
+                           </li>
+                         
+                        </ul>
+                      </div>  
+        </div>
+    </div>
+
+
+<div class="ui-g content-items" >
+    <div class="alert-empty" *ngIf="isEmpty">No Currencies !</div>
+    <div class="ui-sm-6 ui-md-3 ui-lg-2  item" *ngFor="let currency of currencies">
+         <div class="section-des">
+           <span> <b>Id : </b> <span class="link" (click)="goToDetailsCurrency(currency)"> {{currency.id}} </span></span>
+           <span><b>Type: </b> {{currency.attributes.currency_type }} </span>
+           <span><b>Symbol:</b> {{currency.attributes.symbol}}</span>
+        </div>  
+    </div>
+</div>
+<div class="ui-g">
+ <p-paginator *ngIf="isLoaded" [rows]="6" [totalRecords]="totalRecords" (onPageChange)="paginate($event)"  [rowsPerPageOptions]="[6,12,24]"></p-paginator>
+</div>
+</div>
